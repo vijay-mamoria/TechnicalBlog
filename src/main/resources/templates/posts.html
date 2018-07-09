@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="layout :: site-head">
+    <title>Spring MVC Technical Blog</title>
+</head>
+<header th:replace="layout :: logged-in">
+
+</header>
+<h1>All the Technical Posts</h1>
+<hr size="7" color="WHITE"/>
+<main id="posts">
+    <article th:each="p : ${posts}">
+        <h1 class="title" th:text="${p.title}">Post Title</h1>
+        <div class="date">
+            <i>Posted On</i>
+            <span th:text="${#dates.format(p.date, 'dd-MMM-yyyy')}">16-JUN-1993</span>
+        </div>
+        <p class="content" th:utext="${p.body}">Post Content</p>
+    </article>
+</main>
+</html>

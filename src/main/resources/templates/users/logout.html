@@ -1,0 +1,24 @@
+<html lang="en" xmlns:th="https://thymeleaf.org">
+<head th:replace="layout :: site-head">
+    <title>Login</title>
+</head>
+<header th:replace="layout :: logged-out">
+
+</header>
+<h1>Login in the Blog</h1>
+
+<form method="post" th:object="${registerNewUser}">
+    <div><label for="username">Username:</label></div>
+    <div>
+        <input type="text" name="username" id="username"/>
+    </div>
+    <div><label for="password">Password:</label></div>
+    <div>
+        <input type="password" name="password" id="password"/>
+    </div>
+    <div>
+        <input type="submit" value="Login"/>
+    </div>
+</form>
+
+</html>
